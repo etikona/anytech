@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative z-50 w-full p-4 bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg">
+    <nav className="relative z-50 w-full p-4 bg-gradient-to-r from-blue-600 to-blue-800 ">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-white font-bold text-2xl">AnyTech</div>
@@ -55,8 +55,8 @@ const Navbar = () => {
               )}
             </AnimatePresence>
           </li>
-          <li className="cursor-pointer">Services</li>
-          <li className="cursor-pointer">About Us</li>
+          <li className="cursor-pointer hover:underline">Services</li>
+          <li className="cursor-pointer hover:underline">About Us</li>
         </ul>
 
         {/* Language Selector & Contact Button */}
