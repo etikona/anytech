@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { Globe, ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 const languages = [
   { code: "en", label: "English" },
@@ -28,7 +29,9 @@ const Navbar = () => {
     <nav className="relative z-50 w-full p-4 bg-gradient-to-r from-blue-600 to-blue-800 ">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="text-white font-bold text-2xl">AnyTech</div>
+        <div className="text-white font-bold text-2xl">
+          <Link href="/">AnyTech</Link>
+        </div>
 
         {/* Nav Links */}
         <ul className="hidden md:flex space-x-8 text-white font-medium">
@@ -55,8 +58,12 @@ const Navbar = () => {
               )}
             </AnimatePresence>
           </li>
-          <li className="cursor-pointer hover:underline">Services</li>
-          <li className="cursor-pointer hover:underline">About Us</li>
+          <li className="cursor-pointer hover:underline">
+            <Link href="/Services">services</Link>
+          </li>
+          <li className="cursor-pointer hover:underline">
+            <Link href="/about">About Us</Link>
+          </li>
         </ul>
 
         {/* Language Selector & Contact Button */}
@@ -90,9 +97,12 @@ const Navbar = () => {
               )}
             </AnimatePresence>
           </div>
-          <button className="text-gray-50 border-neutral-50 bg-none px-4 py-2 rounded-md shadow">
+          <Link
+            href="/contact"
+            className="text-gray-50 border-neutral-50 bg-none px-4 py-2 rounded-md shadow"
+          >
             Contact Us
-          </button>
+          </Link>
         </div>
       </div>
     </nav>

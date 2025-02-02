@@ -8,6 +8,7 @@ const WaveLines2 = "/assets/backgrounds/WaveLinesDesktop2.svg";
 const WaveLines3 = "/assets/backgrounds/WaveLinesDesktop3.svg";
 const WaveLines4 = "/assets/backgrounds/WaveLinesDesktop4.svg";
 const female = "/assets/images/female.jpg";
+import arrow from "@/public/assets/icons/arrow.png";
 const NavbarBgSection = () => {
   const textRef = useRef(null);
   const waveRef = useRef(null);
@@ -53,17 +54,25 @@ const NavbarBgSection = () => {
         ref={textRef}
         className="w-full max-w-3xl px-8 lg:px-16 text-left z-10 text-white"
       >
-        <h3 className="text-lg font-semibold text-teal-300">OUR SERVICES</h3>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          Re-imagining <br /> banking solutions
+        <h1 className="text-6xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          Embracing the future of finance
         </h1>
         <p className="mt-4 text-xl">
-          Enabling financial institutions to create unparalleled customer
-          experiences
+          Reimagine financial services with AnyTech’s open platform, distributed
+          banking solution that powers transformation
         </p>
-        <button className="bg-orange-600 p-3 text-lg mt-3 rounded-md">
-          Reach Out to us{" "}
-        </button>
+        <div className="bg-orange-600 w-1/3 mt-3 flex items-center text-white text-lg p-2 rounded cursor-pointer transform-3d transition-transform duration-300 ">
+          <p className="transition-transform duration-300 hover:translate-x-2">
+            Reach out to us
+          </p>
+          <Image
+            src={arrow}
+            width={20}
+            height={20}
+            alt="right arrow"
+            className="ml-2 transition-transform duration-300 hover:translate-x-2"
+          />
+        </div>
       </div>
       <div className="">
         <Image
@@ -76,10 +85,7 @@ const NavbarBgSection = () => {
       </div>
 
       {/* Animated Wave Background */}
-      <div
-        ref={waveRef}
-        className="absolute inset-0 w-full h-full bg-transparent"
-      >
+      <div ref={waveRef} className="absolute inset-0 w-full h-full ">
         <Image
           src={WaveLines1}
           alt="Wave Lines Background"

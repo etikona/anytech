@@ -1,0 +1,28 @@
+/* Gradient border effect */
+.gradient-border {
+  border: 2px solid transparent; /* Start with a transparent border */
+  transition: all 0.3s ease-in-out;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, #161164, #2b1bd3); /* Gradient border */
+  border-radius: 12px;
+}
+
+/* Border appears on hover */
+.gradient-border:hover {
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(90deg, #2de836, #211aac);
+  background-clip: padding-box, border-box;
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.5); /* Optional shadow for hover effect */
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(-360deg, #30e642, #2b1bd3); /* Gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
