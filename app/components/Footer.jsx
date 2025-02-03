@@ -17,13 +17,13 @@ const Footer = () => {
               Our Solutions
             </a>
             <span className="text-gray-500">|</span>
-            <a href="#anycaas" className="hover:underline">
+            <a href="/caas" className="hover:underline">
               AnyCaaS
             </a>
-            <a href="#anybaas" className="hover:underline">
+            <a href="/baas" className="hover:underline">
               AnyBaaS
             </a>
-            <a href="#anypaas" className="hover:underline">
+            <a href="/paas" className="hover:underline">
               AnyPaaS
             </a>
           </div>

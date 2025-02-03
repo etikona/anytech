@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-
+import arrow from "@/public/assets/icons/arrow.png";
+import Image from "next/image";
 const ContactForm = () => {
   const {
     register,
@@ -14,10 +15,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <div className="w-full max-w-2xl mx-auto bg-white rounded-xl shadow-2xl p-10 md:p-12 mt-10 mb-10">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         {/* First Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-medium text-gray-700">
               First Name
@@ -27,7 +28,7 @@ const ContactForm = () => {
               {...register("firstName", {
                 required: "First Name is required",
               })}
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="First Name"
             />
             {errors.firstName && (
@@ -43,7 +44,7 @@ const ContactForm = () => {
             <input
               type="text"
               {...register("lastName", { required: "Last Name is required" })}
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="Last Name"
             />
             {errors.lastName && (
@@ -55,7 +56,7 @@ const ContactForm = () => {
         </div>
 
         {/* Second Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Job Title
@@ -63,7 +64,7 @@ const ContactForm = () => {
             <input
               type="text"
               {...register("jobTitle", { required: "Job Title is required" })}
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="Job Title"
             />
             {errors.jobTitle && (
@@ -81,7 +82,7 @@ const ContactForm = () => {
               {...register("companyName", {
                 required: "Company Name is required",
               })}
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="Company Name"
             />
             {errors.companyName && (
@@ -100,7 +101,7 @@ const ContactForm = () => {
           <input
             type="email"
             {...register("email", { required: "Email is required" })}
-            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
             placeholder="Email"
           />
           {errors.email && (
@@ -115,9 +116,9 @@ const ContactForm = () => {
           </label>
           <textarea
             {...register("message", { required: "Message is required" })}
-            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
             placeholder="Let us know how we can help you!"
-            rows="4"
+            rows="5"
           ></textarea>
           {errors.message && (
             <span className="text-red-500 text-sm">
@@ -126,12 +127,29 @@ const ContactForm = () => {
           )}
         </div>
 
-        {/* Submit Button */}
+        {/* Submit Section */}
+        <p className="text-sm text-gray-500">
+          By submitting this form, you confirm that you agree to the processing
+          of your personal data by AnyTech as described in the{" "}
+          <a href="#" className="text-blue-600 hover:underline">
+            privacy policy
+          </a>
+          .
+        </p>
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
+          className="bg-orange-600 w-full mt-3 flex items-center text-white text-lg p-2 text-center rounded cursor-pointer transform-3d transition-transform duration-300 "
         >
-          Submit
+          <p className="transition-transform duration-300 hover:translate-x-2">
+            Submit
+          </p>
+          <Image
+            src={arrow}
+            width={20}
+            height={20}
+            alt="right arrow"
+            className="ml-2 transition-transform duration-300 hover:translate-x-2 "
+          />
         </button>
       </form>
     </div>

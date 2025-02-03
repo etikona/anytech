@@ -9,7 +9,6 @@ import Trusted from "../components/ServiceComponents/Trusted";
 const ServiceHomePage = () => {
   return (
     <div>
-      <Navbar />
       <ServiceNavbarBg />
       <ServiceHero />
       <ServiceComponent />

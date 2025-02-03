@@ -10,7 +10,6 @@ import Founder from "../components/AboutComponents/Founder";
 const AboutPage = () => {
   return (
     <div className="">
-      <Navbar />
       <AboutNavBg />
       <AboutHero />
       <Empower />
